@@ -19,13 +19,20 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult GetCategoryList()
         {
-            var categoryValues = cm.GetAllBL();
-            return View(categoryValues);
+            //var categoryValues = cm.GetAllBL();
+            return View();
         }
 
+        [HttpGet]
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult AddCategory(Category c)
         {
-            cm.CategoryAddBL(c);
+            //cm.CategoryAddBL(c);
             return RedirectToAction("GetCategoryList");
         }
     }
