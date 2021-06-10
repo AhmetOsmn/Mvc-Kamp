@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="p-5 bg-blue text-center">
+            <div class="text-white card-header">Toplam Kategori</div>
+            <div class="card-body">
+                <h5>@ViewBag.result1</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="p-5 bg-cyan text-center">
+            <div class="text-white card-header">Yazılım Başlık Sayısı</div>
+            <div class="card-body">
+                <h5>@ViewBag.result2</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="p-5 bg-fuchsia text-center">
+            <div class="text-white card-header">A harfi geçen yazar sayısı</div>
+            <div class="card-body">
+                <h5>@ViewBag.result3</h5>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="col-md-4 mt-4">
+        <div class="p-5 bg-orange text-center">
+            <div class="text-white card-header">En fazla başlığa sahip kategori</div>
+            <div class="card-body">
+                <h5 class="text-white">@ViewBag.result4</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mt-4">
+        <div class="p-5 bg-green text-center">
+            <div class="text-white card-header">TRUE - FALSE</div>
+            <div class="card-body">
+                <h5>@ViewBag.result5</h5>
+            </div>
+        </div>
+    </div>
+</div>
