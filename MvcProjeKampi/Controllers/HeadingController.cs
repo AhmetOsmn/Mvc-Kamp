@@ -78,6 +78,15 @@ namespace MvcProjeKampi.Controllers
         public ActionResult DeleteHeading(int id)
         {
             var headingValue = headingManager.GetById(id);
+            headingValue.HeadingStatus = false;
+            headingManager.HeadingDelete(headingValue);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ActiveHeading(int id)
+        {
+            var headingValue = headingManager.GetById(id);
+            headingValue.HeadingStatus = true;
             headingManager.HeadingDelete(headingValue);
             return RedirectToAction("Index");
         }
