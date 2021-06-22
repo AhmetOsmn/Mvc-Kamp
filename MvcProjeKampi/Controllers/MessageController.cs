@@ -17,16 +17,12 @@ namespace MvcProjeKampi.Controllers
         public ActionResult Inbox()
         {
             var messageList = messageManager.GetListInbox();
-            var length = messageList.Count().ToString();
-            ViewBag.result1 = length;
             return View(messageList);
         }
 
         public ActionResult Sendbox()
         {
             var messageList = messageManager.GetListSendbox();
-            var length = messageList.Count().ToString();
-            ViewBag.result2 = length;
             return View(messageList);
         }
 

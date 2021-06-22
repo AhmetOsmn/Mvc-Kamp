@@ -15,6 +15,8 @@ namespace MvcProjeKampi.Controllers
 
         ContactManager contactManager = new ContactManager(new EfContactDal());
         ContactValidator contactValidator = new ContactValidator();
+        MessageManager messageManager = new MessageManager(new EfMessageDal());
+        
         public ActionResult Index()
         {
             var contactValues = contactManager.GetList();
@@ -23,12 +25,21 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult GetContactDetails(int id)
         {
-            var contactValues = contactManager.GetById(id);
+            var contactValues = contactManager.GetById(id);    
             return View(contactValues);
         }
 
         public PartialViewResult ContactPartial()
         {
+            var messageListInbox = messageManager.GetListInbox();
+
+            var length1 = messageListInbox.Count().ToString();
+            ViewBag.result1 = length1;
+
+            var contactValues = contactManager.GetList();
+            var length2 = contactValues.Count().ToString();
+            ViewBag.result2 = length2;
+
             return PartialView();
         }
     }
