@@ -40,6 +40,10 @@ namespace MvcProjeKampi.Controllers
             var length2 = contactValues.Count().ToString();
             ViewBag.result2 = length2;
 
+            var drafts = messageManager.IsDraft();
+            var length3 = drafts.Count();
+            ViewBag.result3 = length3;
+
             return PartialView();
         }
     }

@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace MvcProjeKampi.Controllers
     {
         // GET: Message
         MessageManager messageManager = new MessageManager(new EfMessageDal());
+        MessageValidator messageValidator = new MessageValidator();
 
         public ActionResult Inbox()
         {
@@ -26,6 +29,18 @@ namespace MvcProjeKampi.Controllers
             return View(messageList);
         }
 
+        public ActionResult GetInboxMessageDetails(int id)
+        {
+            var values = messageManager.GetById(id);
+            return View(values);
+        }
+
+        public ActionResult GetSendboxMessageDetails(int id)
+        {
+            var values = messageManager.GetById(id);
+            return View(values);
+        }
+
         [HttpGet]
         public ActionResult NewMessage()
         {
@@ -33,9 +48,38 @@ namespace MvcProjeKampi.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewMessage(Message message)
+        public ActionResult NewMessage(Message message, string parameter)
         {
+            ValidationResult results = messageValidator.Validate(message);
+            if (results.IsValid)
+            {
+                message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                messageManager.MessageAddBL(message);
+                return RedirectToAction("SendBox");
+            }
+            else if (parameter == "draft")
+            {
+                message.SenderMail = "admin@gmail.com";
+                message.IsDraft = true;
+                message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                messageManager.MessageAddBL(message);
+                return RedirectToAction("Draft");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            
             return View();
+        }
+
+        public ActionResult Draft()
+        {
+            var result = messageManager.IsDraft();
+            return View(result);
         }
     }
 }

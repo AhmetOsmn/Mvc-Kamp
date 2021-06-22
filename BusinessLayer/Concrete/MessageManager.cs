@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public Message GetById(int id)
         {
-            throw new NotImplementedException();
+            return _messageDal.Get(x => x.MessageID == id);
         }
 
         public List<Message> GetListInbox()
@@ -29,7 +29,12 @@ namespace BusinessLayer.Concrete
         }
         public List<Message> GetListSendbox()
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == "admin@gmail.com" && x.IsDraft == false);
+        }
+
+        public List<Message> IsDraft()
+        {
+            return _messageDal.List(x => x.IsDraft == true);
         }
 
         public void MessageAddBL(Message message)
