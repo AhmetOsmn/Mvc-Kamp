@@ -116,6 +116,10 @@
     <Compile Include="Migrations\202106221343003_added_imagefile.designer.cs">
       <DependentUpon>202106221343003_added_imagefile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106230847481_added_admin.cs" />
+    <Compile Include="Migrations\202106230847481_added_admin.designer.cs">
+      <DependentUpon>202106230847481_added_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106221343003_added_imagefile.resx">
       <DependentUpon>202106221343003_added_imagefile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106230847481_added_admin.resx">
+      <DependentUpon>202106230847481_added_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
