@@ -1,5 +1,4 @@
-﻿
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +9,11 @@ namespace BusinessLayer.Abstract
 {
     public interface IHeadingService
     {
-        List<Heading> GetList();
-        void HeadingAdd(Heading heading);
-        Heading GetById(int id);
-        void HeadingDelete(Heading heading);
-        void HeadingUpdate(Heading heading);
+        List<Heading> GetHeadingList();
+        List<Heading> GetHeadingListByWriter(int id);
+        void AddHeading(Heading heading);
+        Heading GetHeadingByID(int id);
+        void DeleteHeading(Heading heading);
+        void UpdateHeading(Heading heading);
     }
 }

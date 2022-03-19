@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
+using DataAccessLayer.Abstract.Repository;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,10 +17,9 @@ namespace BusinessLayer.Concrete
         {
             _imageFileDal = imageFileDal;
         }
-
-        public List<ImageFile> GetList()
+        public List<ImageFile> GetImageList()
         {
-            return _imageFileDal.List();
+            return _imageFileDal.ReadAll();
         }
     }
 }

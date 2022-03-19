@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MvcProjeKampi")]
+[assembly: AssemblyTitle("BitirmeProjem")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MvcProjeKampi")]
+[assembly: AssemblyProduct("BitirmeProjem")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4ccac125-7b6d-401c-a61e-c45c67fe85bb")]
+[assembly: Guid("807bf494-8b3d-4910-80d0-7f504bbe2c59")]
 
 // Version information for an assembly consists of the following four values:
 //

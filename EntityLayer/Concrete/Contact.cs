@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     public class Contact
     {
         [Key]
-        public int ContactId { get; set; }
+        public int ContactID { get; set; }
 
         [StringLength(50)]
         public string UserName { get; set; }
@@ -25,3 +25,4 @@ namespace EntityLayer.Concrete
         public DateTime ContactDate { get; set; }
     }
 }
+//6

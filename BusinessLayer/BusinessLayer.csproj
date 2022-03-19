@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85EFA97A-9609-43A8-B71A-32AE8B0E3B43}</ProjectGuid>
+    <ProjectGuid>{AF904E74-F4B0-4E17-B5EE-472E498502C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BusinessLayer</RootNamespace>
@@ -41,7 +41,7 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+      <HintPath>..\packages\FluentValidation.10.3.6\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -55,42 +55,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutService.cs" />
+    <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IContentService.cs" />
     <Compile Include="Abstract\IHeadingService.cs" />
     <Compile Include="Abstract\IImageFileService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\IAdminLoginService.cs" />
+    <Compile Include="Abstract\IWriterLoginService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
+    <Compile Include="Concrete\AdminLoginManager.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />
     <Compile Include="Concrete\HeadingManager.cs" />
     <Compile Include="Concrete\ImageFileManager.cs" />
     <Compile Include="Concrete\MessageManager.cs" />
+    <Compile Include="Concrete\WriterLoginManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidationRules\CategoryValidator.cs" />
-    <Compile Include="ValidationRules\ContactValidator.cs" />
-    <Compile Include="ValidationRules\MessageValidator.cs" />
-    <Compile Include="ValidationRules\WriterValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\CategoryValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\ContactValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\MessageValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\WriterValidator.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{0c0babdc-d34f-486a-a13d-52e9eaa233e2}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{687995c2-2d51-4c3b-b54d-2de5afe9d942}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{2b081ec5-110c-4ac6-83c4-bf868be7bfb0}</Project>
-      <Name>DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
-      <Project>{c82b6c5e-4dc8-4fc3-bc90-919f594b28b6}</Project>
-      <Name>EntityLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

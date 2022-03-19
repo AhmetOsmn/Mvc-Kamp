@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C82B6C5E-4DC8-4FC3-BC90-919F594B28B6}</ProjectGuid>
+    <ProjectGuid>{687995C2-2D51-4C3B-B54D-2DE5AFE9D942}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EntityLayer</RootNamespace>
@@ -61,6 +61,9 @@
     <Compile Include="Concrete\Message.cs" />
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

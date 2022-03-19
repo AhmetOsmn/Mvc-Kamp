@@ -11,6 +11,7 @@ namespace BusinessLayer.Concrete
 {
     public class AboutManager : IAboutService
     {
+
         IAboutDal _aboutDal;
 
         public AboutManager(IAboutDal aboutDal)
@@ -18,29 +19,29 @@ namespace BusinessLayer.Concrete
             _aboutDal = aboutDal;
         }
 
-        public void AboutAddBL(About about)
+        public void AddAbout(About about)
         {
-            _aboutDal.Insert(about);
+            _aboutDal.Create(about);
         }
 
-        public void AboutDelete(About about)
+        public void DeleteAbout(About about)
         {
             _aboutDal.Delete(about);
         }
 
-        public void AboutUpdate(About about)
+        public About GetAboutByID(int id)
+        {
+            return _aboutDal.Get(x => x.AboutID == id);
+        }
+
+        public List<About> GetAboutList()
+        {
+            return _aboutDal.ReadAll();
+        }
+
+        public void UpdateAbout(About about)
         {
             _aboutDal.Update(about);
-        }
-
-        public About GetById(int id)
-        {
-            return _aboutDal.Get(x => x.AboutId == id);
-        }
-
-        public List<About> GetList()
-        {
-            return _aboutDal.List();
         }
     }
 }

@@ -1,0 +1,72 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Mvc Projesi</title>
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper" style="height:100%;">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="info">
+                        <a href="/Default/Headings/" class="d-block">BAŞLIKLAR</a>
+                    </div>
+                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" style="border-bottom:1px solid #4F5962" data-widget="treeview" role="menu" data-accordion="false">
+                        @foreach (var item in Model)
+                        {
+                            <li class="nav-item">
+                                <a href="/Default/Headings/@item.HeadingID" class="nav-link">
+                                    <p>
+                                        @item.HeadingName (15)
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <br />
+                    <div class="row">
+                        <div class="col" >
+                            <a href="/WriterPanelLogin/Index/" style="color:black;" class="btn btn-warning">Yazar Giriş</a>
+                        </div>
+                        <div class="col">
+                            <a href="/AdminLogin/Index/" style="color:black;"class="btn btn-info">Admin</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="content-wrapper">
+            <div class="content">
+                @Html.Action("Index","Default")
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+</body>
+</html>

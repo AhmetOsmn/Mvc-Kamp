@@ -1,0 +1,114 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Mvc Projesi</title>
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper" style="height:100%;">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="info" style="color:white;">     
+                        <h3 class="d-block">Yazar Paneli</h3>
+                    </div>
+                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item has-treeview">
+                            <a href="/WriterPanelHeading/WriterProfile/" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Profilim
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/WriterPanelHeading/MyHeading/" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Başlıklarım
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/WriterPanelHeading/AllHeading/" class="nav-link">
+                                <i class="nav-icon fas fa-list-alt"></i>
+                                <p>
+                                    Tüm Başlıklar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/WriterPanelMessage/Inbox/" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Mesajlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/WriterPanelContent/MyContent/" class="nav-link">
+                                <i class="nav-icon fas fa-calendar-alt"></i>
+                                <p>
+                                    Yazılarım
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/WriterPanelContent/ToDoList/" class="nav-link">
+                                <i class="nav-icon fas fa-list-ul"></i>
+                                <p>
+                                    Yapılacaklar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Home/HomePage/" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Siteye Git
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/WriterPanelLogin/LogOut/" class="nav-link">
+                                <i class="nav-icon fas fa-door-closed"></i>
+                                <p>
+                                    Çıkış Yap
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="content-wrapper">
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+</body>
+</html>

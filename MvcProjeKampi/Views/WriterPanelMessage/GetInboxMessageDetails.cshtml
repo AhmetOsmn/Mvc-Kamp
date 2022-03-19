@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Message
+
+@{
+    ViewBag.Title = "GetInboxMessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Mesaj Sayfası</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("ContactPartial", "WriterPanelMessage")
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h4>Konu: @Html.DisplayFor(x => x.Subject)</h4>
+                                <h6>
+                                    Kimden: @Html.DisplayFor(x => x.SenderMail)
+                                    <span class="mailbox-read-time float-right">@(((DateTime)Model.MessageDate).ToString("dd-MM-yyyy"))</span>
+                                </h6>
+                            </div>
+
+                            <div class="mailbox-read-message">
+                                <p>@Html.DisplayFor(x => x.MessageContent)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+

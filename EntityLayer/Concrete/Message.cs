@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Message
+    public class Message  
     {
         [Key]
         public int MessageID { get; set; }
@@ -17,12 +17,10 @@ namespace EntityLayer.Concrete
 
         [StringLength(50)]
         public string ReceiverMail { get; set; }
-        
+
         [StringLength(100)]
         public string Subject { get; set; }
-        
-        public string  MessageContent { get; set; }
+        public string MessageContent { get; set; }
         public DateTime MessageDate { get; set; }
-        public bool IsDraft { get; set; }
     }
 }

@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Giriş</title>
+    <link href="~/AdminLTE-3.0.4/login-form/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="login-page">
+        <h1>Admin Girişi</h1>
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="isim" />
+                <input type="password" placeholder="şifre" />
+                <input type="text" placeholder="email" />
+                <button>create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            @using (Html.BeginForm("Index", "AdminLogin", FormMethod.Post))
+            {
+                <input type="text" name="AdminUserName" placeholder="kullanıcı adı" />
+                <input type="password" name="AdminPassword" placeholder="şifre" />
+                <button>Giriş Yap</button>
+            }
+            <br />
+            <a href="#" class="btn btn-danger">Ana sayfaya dön</a>
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/AdminLTE-3.0.4/login-form/JavaScript.js"></script>
